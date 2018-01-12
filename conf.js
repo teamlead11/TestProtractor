@@ -5,9 +5,13 @@ exports.config = {
     framework: 'custom',
     // path relative to the current config file
     frameworkPath: require.resolve('protractor-cucumber-framework'),
-    capabilities: {
-        'browserName': 'chrome'
-    },
+    multiCapabilities: [{
+        'browserName': 'firefox',
+        count: 4
+    }, {
+        'browserName': 'chrome',
+        count: 4
+    }],
 
     // Spec patterns are relative to this directory.
     specs: [
